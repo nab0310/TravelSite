@@ -8,14 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
-        </div>
-            <div class="panel-heading">Search For a Resturant!</div>
-
-            <div class="panel-body">
-                <input type="text">
-                <button>Search</button>
-                
-        </div>
+                    I am the places from the views root directory file.
+                <button onclick="getGooglePlaces()">Get Places</button>
 </div>
 @endsection

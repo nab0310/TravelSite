@@ -83,5 +83,6 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="/js/googlePlaces.js"></script>
 </body>
 </html>

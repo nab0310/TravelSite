@@ -6,7 +6,9 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*"
+      "laravel/framework": "5.3.*",
+      "joshtronic/php-googleplaces": "dev-master",
+        "skagarwal/google-places-api": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -17,7 +19,8 @@
     },
     "autoload": {
         "classmap": [
-            "database"
+          "database",
+          "vendor/joshtronic/php-googleplaces/src/GooglePlaces.php"
         ],
         "psr-4": {
             "App\\": "app/"

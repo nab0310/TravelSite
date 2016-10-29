@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('places', 'PlaceController');
+
+Route::get('places/testing', 'PlaceController@testing');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
