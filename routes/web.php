@@ -15,9 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('places', 'PlaceController');
+Route::get('/places/restaurant','PlaceController@restaurant');
 
-Route::get('places/testing', 'PlaceController@testing');
+Route::get('/places/store','PlaceController@store');
+
+Route::get('/places/liquor_store','PlaceController@liquor_store');
+
+Route::get('/places/info/{id}',[
+	'as' => 'info',
+	'uses'=>'PlaceController@info'
+	]);
+
+Route::resource('places', 'PlaceController');
 
 Auth::routes();
 

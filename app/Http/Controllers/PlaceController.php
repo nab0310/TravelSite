@@ -28,17 +28,6 @@ class PlaceController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -82,12 +71,16 @@ class PlaceController extends Controller
     {
         //
     }
-    public function testing(){
-        return view('places');
-/*        $google_places = new joshtronic\GooglePlaces('AIzaSyAyg20NhRd6eBWgHt0u6EXhDA2-2wkFN-Q');
-        $google_places->location = array(-33.86820, 151.1945860);
-        $google_places->radius   = 800;
-        $results                 = $google_places->nearbySearch();
-        Log::warning('The results from the Google Places call: '+$results);*/
+    public function info($id){
+        return view('placeInfo', compact('id'));
+    }
+    public function restaurant(){
+        return view('restaurant');
+    }
+    public function store(){
+        return view('store');
+    }
+    public function liquor_store(){
+        return view('liquor_store');
     }
 }

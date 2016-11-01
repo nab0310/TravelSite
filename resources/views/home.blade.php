@@ -10,12 +10,11 @@
                 <div class="panel-body">
                     You are logged in!
         </div>
-            <div class="panel-heading">Search For a Resturant!</div>
+            <div class="panel-heading">What do you want to find nearby?</div>
 
-            <div class="panel-body">
-                <input type="text">
-                <button>Search</button>
-                
-        </div>
+            <a href="{{ url('/places/restaurant') }}">Restraunt</a>
+            <a href="{{ url('/places/store') }}">Store</a>
+            <a href="{{ url('/places/liquor_store') }}">Liquor Store</a>
+        
 </div>
 @endsection

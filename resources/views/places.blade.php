@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    I am the places from the views root directory file.
+                    I am the places from the views root directory file.s
                 <button onclick="getGooglePlaces()">Get Places</button>
 </div>
 @endsection
