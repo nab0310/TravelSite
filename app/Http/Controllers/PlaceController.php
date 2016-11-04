@@ -71,8 +71,8 @@ class PlaceController extends Controller
     {
         //
     }
-    public function info($id){
-        return view('placeInfo', compact('id'));
+    public function info($id, $name){
+        return view('placeInfo', compact('id'), compact('name'));
     }
     public function restaurant(){
         return view('restaurant');

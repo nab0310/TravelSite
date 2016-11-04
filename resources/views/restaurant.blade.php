@@ -48,12 +48,13 @@
                                     for (var i = 0; i < results.length; i++) {
                                         var div = document.getElementById('Resturant');
                                         var id = results[i].place_id;
-                                        var url = "{{ url('/places/info/"+id+"') }}";
-                                        var addedText = "<a id= "+results[i].place_id+">"+results[i].name+"</a>";
+                                        var addedText = "<a id = "+results[i].place_id+">"+results[i].name+"</a>";
                                         div.innerHTML = div.innerHTML + addedText;
                                         div.innerHTML = div.innerHTML + "<hr>"
-                                        document.getElementById(""+results[i].place_id+"").href = {{ route('info', ['id' => 1]) }};
                                     }
+                                    $("a").click(function(){
+                                        window.location = "{{ url('/places/info') }}"+"/"+$(this).attr('id')+"/"+$(this).text();
+                                    });
                                 }
                             }
                         </script>
