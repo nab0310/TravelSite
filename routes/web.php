@@ -19,6 +19,8 @@ Route::get('/places/restaurant','PlaceController@restaurant');
 
 Route::get('/places/store','PlaceController@store');
 
+Route::get('/places/lodging','PlaceController@lodging');
+
 Route::get('/places/liquor_store','PlaceController@liquor_store');
 
 Route::get('/places/airport','PlaceController@airport');

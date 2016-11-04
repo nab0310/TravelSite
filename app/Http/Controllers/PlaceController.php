@@ -86,4 +86,8 @@ class PlaceController extends Controller
     public function airport(){
         return view('airport');
     }
+    public function lodging()
+    {
+        return view('lodging');
+    }
 }

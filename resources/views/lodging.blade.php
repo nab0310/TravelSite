@@ -1,7 +1,7 @@
 @extends('layouts.getNearby')
 
 @section('title')
-<div class="panel-heading">Restraunts Nearby!</div>
+<div class="panel-heading">Lodging Nearby!</div>
 @endsection
 @section('script')
 <script>
@@ -25,7 +25,7 @@
         service.nearbySearch({
             location: map.getCenter(),
             radius: radius,
-            type: ['restaurant']
+            type: ['lodging']
         }, callback);
               }, function() {
               });
