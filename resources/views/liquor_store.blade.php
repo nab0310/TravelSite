@@ -10,7 +10,7 @@
 
                     <div class="panel-body">
                         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXxdfrQrBDYjzVHpnAi3eaPRTPNGbUh00&libraries=places&callback=searchResturants" async defer></script>
-                        <div id="Resturant"></div>
+                        <div id="liquor_store"></div>
                         <div id="map"></div>
                         <script>
                             // This example requires the Places library. Include the libraries=places
@@ -46,10 +46,15 @@
                             function callback(results, status) {
                                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                                     for (var i = 0; i < results.length; i++) {
-                                        var div = document.getElementById('Resturant');
-                                        div.innerHTML = div.innerHTML + results[i].name;
+                                        var div = document.getElementById('liquor_store');
+                                        var id = results[i].place_id;
+                                        var addedText = "<a id = "+results[i].place_id+">"+results[i].name+"</a>";
+                                        div.innerHTML = div.innerHTML + addedText;
                                         div.innerHTML = div.innerHTML + "<hr>"
                                     }
+                                    $("a").click(function(){
+                                        window.location = "{{ url('/places/info') }}"+"/"+$(this).attr('id')+"/"+$(this).text();
+                                    });
                                 }
                             }
                         </script>
