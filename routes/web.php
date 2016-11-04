@@ -21,6 +21,8 @@ Route::get('/places/store','PlaceController@store');
 
 Route::get('/places/liquor_store','PlaceController@liquor_store');
 
+Route::get('/places/airport','PlaceController@airport');
+
 Route::get('/places/info/{name}/{id}','PlaceController@info');
 
 Route::resource('places', 'PlaceController');
@@ -28,3 +30,5 @@ Route::resource('places', 'PlaceController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/home/autocomplete', 'HomeController@autocomplete');

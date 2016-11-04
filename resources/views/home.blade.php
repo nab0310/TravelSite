@@ -15,6 +15,7 @@
             <a href="{{ url('/places/restaurant') }}">Restraunt</a>
             <a href="{{ url('/places/store') }}">Store</a>
             <a href="{{ url('/places/liquor_store') }}">Liquor Store</a>
+            <a href="{{ url('/places/airport') }}">Airports</a>
         
 </div>
 @endsection

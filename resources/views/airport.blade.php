@@ -1,12 +1,12 @@
 @extends('layouts.getNearby')
 
 @section('title')
-<div class="panel-heading">Liquor Stores Nearby!</div>
+<div class="panel-heading">Airports Nearby!</div>
 @endsection
 @section('script')
 <script>
     var map;
-    var radius=500;
+    var radius =500;
     var increaseRadiusFlag = 0;
     function searchPlace() {
         var browserLocation;
@@ -25,7 +25,7 @@
         service.nearbySearch({
             location: map.getCenter(),
             radius: radius,
-            type: ['liquor_store']
+            type: ['airport']
         }, callback);
               }, function() {
               });

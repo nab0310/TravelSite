@@ -21,7 +21,6 @@
                 <div class="panel-heading">{{$name}}</div>
 
                     <div class="panel-body">
-                         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXxdfrQrBDYjzVHpnAi3eaPRTPNGbUh00&libraries=places&callback=getInfo" async defer></script>
                         <div id="Address"></div>
                         <div id="Phone"></div>
                         <div id="Hours"></div>
@@ -78,7 +77,7 @@
                                 	document.getElementById("Phone").innerHTML = "Phone Number: "+ results.formatted_phone_number;
                                 	document.getElementById("Icon").innerHTML = "Icon: "+ results.icon;
                                 	//parse Hours
-                                	document.getElementById("Hours").innerHTML = "Hours: "+ results.opening_hours.open_now;
+                                    parseHours(results.opening_hours.weekday_text);
                                 	document.getElementById("Name").innerHTML = "Name: "+ results.name;
                                 	document.getElementById("Rating").innerHTML = "Rating: "+ results.rating;
 									document.getElementById("PriceLevel").innerHTML = "Price Level: "+ results.price_level;
@@ -93,6 +92,16 @@
                                 	}
                                 	document.getElementById("Website").innerHTML = "Website: "+results.website;
                                 }
+                            }
+                            function parseHours(hours) {
+                                var div = document.getElementById('Hours'); 
+                                div.innerHTML += "<p>Hours:</p>";
+                                div.innerHTML += "<ul>";
+                                for(var i=0;i<hours.length;i++){
+                                    var addedText = "<li>"+hours[i]+"</li>";
+                                    div.innerHTML = div.innerHTML + addedText;
+                                }
+                                div.innerHTML += "</ul>";
                             }
                             function parsePhotos(photos){
                             	var div = document.getElementById('Photos');
@@ -113,6 +122,7 @@
                             	}
                             }
                         </script>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXxdfrQrBDYjzVHpnAi3eaPRTPNGbUh00&libraries=places&callback=getInfo" async defer></script>
                 </div>
             </div> 
         </div>
