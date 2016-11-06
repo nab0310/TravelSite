@@ -1,7 +1,7 @@
 @extends('layouts.getNearby')
 
 @section('title')
-<div class="panel-heading">Airports Nearby!</div>
+<div class="panel-heading">Airports1 Nearby!</div>
 @endsection
 @section('script')
 <script>
