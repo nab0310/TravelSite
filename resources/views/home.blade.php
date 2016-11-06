@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    You are now logged in!
         </div>
             <div class="panel-heading">What do you want to find nearby?</div>
 
