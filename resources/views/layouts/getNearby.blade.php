@@ -10,6 +10,7 @@
                     <div class="panel-body">
                         <div id="content"></div>
                         <div id="map"></div>
+                        <button onclick="showMoreRestraunts()">Show More!</button>
                         @yield('script')
                         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXxdfrQrBDYjzVHpnAi3eaPRTPNGbUh00&libraries=places&callback=searchPlace" async defer></script>
                 </div>
