@@ -25,6 +25,8 @@ Route::get('/places/liquor_store','PlaceController@liquor_store');
 
 Route::get('/places/airport','PlaceController@airport');
 
+Route::get('/places/searchCity/{City}','PlaceController@searchCity');
+
 Route::get('/places/info/{name}/{id}','PlaceController@info');
 
 Route::resource('places', 'PlaceController');

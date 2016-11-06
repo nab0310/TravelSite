@@ -9,13 +9,22 @@
 
                 <div class="panel-body">
                     You are now logged in!
-        </div>
+                </div>
             <div class="panel-heading">What do you want to find nearby?</div>
 
-            <a href="{{ url('/places/restaurant') }}">Restraunt</a>
-            <a href="{{ url('/places/store') }}">Store</a>
-            <a href="{{ url('/places/liquor_store') }}">Liquor Store</a>
-            <a href="{{ url('/places/airport') }}">Airports</a>
+            &nbsp;<a href="{{ url('/places/restaurant') }}">Restraunt</a>     |
+            <a href="{{ url('/places/store') }}">Store</a>      |
+            <a href="{{ url('/places/liquor_store') }}">Liquor Store</a>        |
+            <a href="{{ url('/places/airport') }}">Airports</a>     |
             <a href="{{ url('/places/lodging') }}">Lodging</a>
+
+            
+        </div>
+        <div class="panel panel-default">
+                <div class="panel-heading">Search a city</div>
+                &nbsp;City:  <input type="text" id="city">
+                <a href="{{ url('/places/searchCity/') }}+document.getElementById('city').value"><input type="button" value="Search"></a>
+
+        </div>
 </div>
 @endsection

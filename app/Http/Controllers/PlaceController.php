@@ -90,4 +90,7 @@ class PlaceController extends Controller
     {
         return view('lodging');
     }
+    public function searchCity(){
+        return view('searchCity', compact('City'));
+    }
 }
