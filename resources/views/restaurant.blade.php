@@ -1,7 +1,7 @@
 @extends('layouts.getNearby')
 
 @section('title')
-<div class="panel-heading">Restraunts Nearby!</div>
+<div class="panel-heading">Restraunts Poopies Nearby!</div>
 @endsection
 @section('script')
 <script>
