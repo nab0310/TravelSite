@@ -30,7 +30,7 @@
                             function fillInAddress() {
                                 // Get the place details from the autocomplete object.
                                 var place = autocomplete.getPlace();
-                                 document.getElementById('content').innerHTML = place.formatted_address;
+                                 document.getElementById('content').innerHTML = place.place_id;
                             }
 
                             function geolocate() {

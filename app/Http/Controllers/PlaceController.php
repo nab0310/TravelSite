@@ -90,7 +90,7 @@ class PlaceController extends Controller
     {
         return view('lodging');
     }
-    public function searchCity(){
-        return view('searchCity', compact('City'));
+    public function searchCity ($lat, $lng){
+        return view('searchCity',compact('lng'),compact('lat'));
     }
 }
