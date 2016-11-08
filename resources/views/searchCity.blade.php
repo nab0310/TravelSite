@@ -4,6 +4,8 @@
 <div class="panel-heading">Restraunts Near Latitude: {{$lat}} Longitude: {{$lng}}</div>
 @endsection
 @section('script')
+<div id = "resultsOfQPX"></div>
+<script src="/js/example.js"></script>
 <script>
     var map;
     var radius=5000;
@@ -19,6 +21,7 @@
     var storeResults;
     var givenLat = {{ $lat }};
     var givenLng = {{ $lng }};
+    //ADD AIRPORTS!!!!!!!
     function showMoreRestraunts(){
         showingRestrauntsStart +=5;
         showingRestrauntsEnd += 5;
