@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('posts/index', 'PostController@index');
+
+Route::post('posts/create', 'PostController@create');
+
 Route::get('/places/restaurant','PlaceController@restaurant');
 
 Route::get('/places/store','PlaceController@store');

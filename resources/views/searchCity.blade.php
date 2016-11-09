@@ -14,7 +14,10 @@
     var showingStoresEnd =5;
     var showingHotelsStart =0;
     var showingHotelsEnd =5;
+    var showingAirportsStart =0;
+    var ShowingAirportsEnd =5;
     var restrauntResults;
+    var airportResults;
     var hotelResults;
     var storeResults;
     var givenLat = {{ $lat }};
@@ -32,6 +35,20 @@
             $("a").click(function(){
                 window.location = "{{ url('/places/info') }}"+"/"+$(this).attr('id')+"/"+$(this).text();
             });
+    }
+    function showMoreAirports(){
+    showingAirportsStart +=5;
+    showingAirportsEnd += 5;
+    for (var i = showingAirportsStart; i < showingAirportsEnd; i++) {
+            var div = document.getElementById('airports');
+            var id = airportResults[i].place_id;
+            var addedText = "<a id = "+airportResults[i].place_id+">"+airportResults[i].name+"</a>";
+            div.innerHTML = div.innerHTML + addedText;
+            div.innerHTML = div.innerHTML + "<hr>"
+        }
+        $("a").click(function(){
+            window.location = "{{ url('/places/info') }}"+"/"+$(this).attr('id')+"/"+$(this).text();
+        });
     }
     function showMoreStores () {
         showingStoresStart +=5;
@@ -110,6 +127,20 @@
         }, callbackStores);
               }, function() {
               });
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                  lat: givenLat,
+                  lng: givenLng
+                };
+                map.setCenter(pos);
+            var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+            location: map.getCenter(),
+            radius: radius,
+            type: ['airport']
+        }, callbackAirports);
+              }, function() {
+              });
         }
     }
 
@@ -173,6 +204,30 @@
         div1.innerHTML = div1.innerHTML + "<div class='col-md-6'><div class='panel panel-default'><div class='panel-heading'>Stores Near Latitude: {{$lat}} Longitude: {{$lng}}</div><div class='panel-body'><div id='stores'></div><div id='map'><button onclick='showMoreStores()''>Show More!</button></div></div></div>";
         for (var i = 0; i < 5; i++) {
             var div = document.getElementById('stores');
+            var id = storeResults[i].place_id;
+            var addedText = "<a id = "+storeResults[i].place_id+">"+storeResults[i].name+"</a>";
+            div.innerHTML = div.innerHTML + addedText;
+            div.innerHTML = div.innerHTML + "<hr>"
+        }
+        $("a").click(function(){
+            window.location = "{{ url('/places/info') }}"+"/"+$(this).attr('id')+"/"+$(this).text();
+        });
+    }
+    if (status === google.maps.places.PlacesServiceStatus.ZERO_RESULTS){
+        if(increaseRadiusFlag==1){
+            increaseRadius();
+        }else{
+            increaseRadius();
+        }
+    }
+}
+     function callbackAirports(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+        storeResults = results;
+        var div1 = document.getElementById('root');
+        div1.innerHTML = div1.innerHTML + "<div class='col-md-6'><div class='panel panel-default'><div class='panel-heading'>Airports Near Latitude: {{$lat}} Longitude: {{$lng}}</div><div class='panel-body'><div id='airports'></div><div id='map'><button onclick='showMoreStores()''>Show More!</button></div></div></div>";
+        for (var i = 0; i < 5; i++) {
+            var div = document.getElementById('airports');
             var id = storeResults[i].place_id;
             var addedText = "<a id = "+storeResults[i].place_id+">"+storeResults[i].name+"</a>";
             div.innerHTML = div.innerHTML + addedText;
