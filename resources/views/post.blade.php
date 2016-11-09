@@ -12,14 +12,6 @@
 				<h3>Please insert the informations below:</h3>
 				<form class="form-horizontal" method="post" action="{{ url('/posts/create') }}">
 					<div class="form-group">
-					    <label for="email" class="col-lg-2 control-label">
-					        Email
-					    </label>
-					    <div class="col-lg-10">
-					        <input type="text" class="form-control" id="email" name = "email">
-					    </div>
-					</div>
-					<div class="form-group">
 					    <label for="Post" class="col-lg-2 control-label">
 					        Post
 					    </label>
@@ -36,6 +28,9 @@
 					</div>
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				</form>
+				<tr>
+					<td>{{ Auth::user()->email }}</td>
+				</tr>
                 @foreach($posts as $key => $value)
              	<tr>
 	             	<hr>
