@@ -90,6 +90,10 @@ class PlaceController extends Controller
     {
         return view('lodging');
     }
+    public function checklist()
+    {
+        return view('checklist');
+    }
     public function searchCity ($lat, $lng){
         return view('searchCity',compact('lng'),compact('lat'));
     }
