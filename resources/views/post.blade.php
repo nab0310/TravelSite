@@ -8,17 +8,8 @@
                 <div class="panel-heading">Posts</div>
 
                 <div class="panel-body">
-                <h1>Post Form</h1><hr>
-				<h3>Please insert the informations below:</h3>
+                Post Form
 				<form class="form-horizontal" method="post" action="{{ url('/posts/create') }}">
-					<div class="form-group">
-					    <label for="email" class="col-lg-2 control-label">
-					        Email
-					    </label>
-					    <div class="col-lg-10">
-					        <input type="text" class="form-control" id="email" name = "email">
-					    </div>
-					</div>
 					<div class="form-group">
 					    <label for="Post" class="col-lg-2 control-label">
 					        Post
@@ -43,7 +34,6 @@
 	                <td>{{ $value->Post }}</td>
 	                <td>{{ $value->UserID }}</td>
                 </tr>
-
                 @endforeach
                 </div>
             </div>
