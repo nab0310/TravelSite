@@ -7,10 +7,12 @@
 
                 <div class="panel-body">
                     Add an item to your checklist here.
-                    <form class="form-horizontal" method="post" action="{{ url('/checklist/add') }}">
-                        <input id="checklistItem" name="item" id="" placeholder="Enter an Item" type="text"></input>
-                        <button type="submit" class="btn btn-primary">Add Item</button>
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <form class="form-horizontal" method="post" action="{{ url('/checklists/add') }}">
+                        <div class="form-group">
+                            <input id="checklistItem" name="item" id="" placeholder="Enter an Item" type="text"></input>
+                            <button type="submit" class="btn btn-primary">Add Item</button>
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        </div>
                     </form>
                 </div>
             </div>
@@ -23,9 +25,8 @@
                         <div id="checkContent">
                             <div id="list">
                             @foreach($items as $key => $value)
-                                    <li>{{ $value-> item }}
                                     <input type="checkbox" name="isDone" value="idDone" {{ $value->isDone != 'N' ? 'checked' : '' }}>
-                                    </li>
+                                    {{ $value-> item }}
                                     <hr>
                             @endforeach
                             </div>
@@ -45,6 +46,13 @@
 
                             }    
 
+                        });
+                    </script>
+                    <script type="text/javascript">
+                        $.ajaxSetup({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
                         });
                     </script>
 
