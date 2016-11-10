@@ -8,8 +8,7 @@
                 <div class="panel-heading">Posts</div>
 
                 <div class="panel-body">
-                <h1>Post Form</h1><hr>
-				<h3>Please insert the informations below:</h3>
+                Post Form
 				<form class="form-horizontal" method="post" action="{{ url('/posts/create') }}">
 					<div class="form-group">
 					    <label for="Post" class="col-lg-2 control-label">
@@ -28,9 +27,6 @@
 					</div>
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				</form>
-				<tr>
-					<td>{{ Auth::user()->email }}</td>
-				</tr>
                 @foreach($posts as $key => $value)
              	<tr>
 	             	<hr>
@@ -38,7 +34,6 @@
 	                <td>{{ $value->Post }}</td>
 	                <td>{{ $value->UserID }}</td>
                 </tr>
-
                 @endforeach
                 </div>
             </div>

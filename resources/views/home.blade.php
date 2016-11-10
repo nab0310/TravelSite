@@ -16,7 +16,8 @@
             <a href="{{ url('/places/store') }}">Store</a>      |
             <a href="{{ url('/places/liquor_store') }}">Liquor Store</a>        |
             <a href="{{ url('/places/airport') }}">Airports</a>     |
-            <a href="{{ url('/places/lodging') }}">Lodging</a>
+            <a href="{{ url('/places/lodging') }}">Lodging</a>      |       
+            <a href="{{ url('/posts/index') }}">Posts</a>
 
             
             </div>
