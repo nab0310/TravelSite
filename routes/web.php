@@ -19,6 +19,10 @@ Route::get('posts/index', 'PostController@index');
 
 Route::post('posts/create', 'PostController@create');
 
+Route::post('checklist/load', 'ChecklistController@load');
+
+Route::post('checklist/add', 'ChecklistController@add');
+
 Route::get('/places/restaurant','PlaceController@restaurant');
 
 Route::get('/places/store','PlaceController@store');

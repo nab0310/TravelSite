@@ -1,14 +1,4 @@
-<?php
-$nLine = "\n";
-?>
-
-<!--  <?php $items = DB::table('checklistItems')->where('id', '3')->pluck('item');
-    $returnVals = "";
-    foreach ($items as $item) {
-       $returnVals += $item;
-       $returnVals += PHP_EOL;
-    }
-?> -->
+<?php $items = DB::table('checklistItems')->where('id', '3')->pluck('item');?>
 
 @extends('layouts.app')
 @section('content')
@@ -20,6 +10,10 @@ $nLine = "\n";
                 <div class="panel-body">
                     Add an item to your checklist here.
                     <input id="checklistItem" placeholder="Enter an Item" type="text"></input>
+                    <form class="form-horizontal" method="post" action="{{ url('/checklist/add') }}">
+                        <button type="submit" class="btn btn-primary">Add Item</button>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    </form>
                 </div>
             </div>
 
@@ -29,7 +23,16 @@ $nLine = "\n";
                     
                     <div class="panel-body">
                         <div id="checkContent">
-
+                            <form class="form-horizontal" method="post" action="{{ url('/checklist/create') }}">
+                                <button type="submit" class="btn btn-primary">Load Checklist</button>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            </form>
+                            @foreach($items as $item)
+                                <tr>
+                                    <td>{{ $item }}</td>
+                                    <hr>
+                                </tr>
+                            @endforeach
                         </div>
                     </div>
 
@@ -40,16 +43,4 @@ $nLine = "\n";
         </div>
     </div>
 </div>
-
-<script>
-     $(document).ready(function(){
-         $("#checkContent").html(" <?php $items = DB::table('checklistItems')->where('id', '3')->pluck('item');
-    $returnVals = "";
-    foreach ($items as $item) {
-       echo $item;
-    }
-?>");
-        
-     });
- </script>
 @endsection
