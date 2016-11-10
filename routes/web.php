@@ -37,7 +37,7 @@ Route::get('/places/searchCity/{lat}/{lng}','PlaceController@searchCity');
 
 Route::get('/places/info/{name}/{id}','PlaceController@info');
 
-Route::get('/places/checklist','PlaceController@checklist');
+Route::get('/places/checklist','ChecklistController@load');
 
 Route::resource('places', 'PlaceController');
 
