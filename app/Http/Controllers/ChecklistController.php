@@ -21,9 +21,15 @@ class ChecklistController extends Controller
     }
     public function add(){
         DB::table('checklistItems')->insert(
-            ['id'=> DB::table('usersForTravelApp')->where('email', Auth::user()->email)->value('id'),'item'=>Input::get('item'),'isDone'=>'0']
+            ['id'=> DB::table('usersForTravelApp')->where('email', Auth::user()->email)->value('id'),'item'=>Input::get('itemAdd'),'isDone'=>'0']
             );
-        $items = DB::table('checklistItems')->where('id', DB::table('usersForTravelApp')->where('email', Auth::user()->email)->value('id') );
+        $items = DB::table('checklistItems')->get()->where('id', DB::table('usersForTravelApp')->where('email', Auth::user()->email)->value('id') );
+        return view('checklist', ['items' => $items]);
+    }
+    public function delete(){
+        DB::table('checklistItems')->where('item', Input::get('itemDelete'))->delete();
+
+        $items = DB::table('checklistItems')->get()->where('id', DB::table('usersForTravelApp')->where('email', Auth::user()->email)->value('id') );
         return view('checklist', ['items' => $items]);
     }
     public function check($itemName, $isChecked){

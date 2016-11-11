@@ -16,6 +16,13 @@
                 </div>
             </div> 
         </div>
+                <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="panel-heading"><a href="{{ url('/home') }}">Home</a></div>
+                </div>
+            </div>
+        </div>
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-body">

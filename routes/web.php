@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Route::get('posts/index', 'PostController@index'); 
@@ -22,6 +22,8 @@ Route::post('posts/create', 'PostController@create');
 Route::post('/places/checklist/load', 'ChecklistController@load');
 
 Route::post('/places/checklist/add', 'ChecklistController@add');
+
+Route::post('/places/checklist/delete', 'ChecklistController@delete');
 
 Route::get('/places/checklist/check/{itemName}/{isChecked}', 'ChecklistController@check');
 

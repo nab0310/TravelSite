@@ -6,7 +6,7 @@
 @section('script')
 <script>
     var map;
-    var radius=5000;
+    var radius=1000;
     var increaseRadiusFlag = 0;
     function searchPlace() {
         var browserLocation;

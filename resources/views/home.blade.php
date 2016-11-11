@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are now logged in!
+                    Welcome to your travel site. Get planning!
                 </div>
             <div class="panel-heading">What do you want to find nearby?</div>
 

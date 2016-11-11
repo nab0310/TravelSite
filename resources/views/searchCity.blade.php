@@ -95,7 +95,7 @@
         service.nearbySearch({
             location: map.getCenter(),
             radius: radius,
-            type: ['liquor_store']
+            type: ['restaurant']
         }, callback);
               }, function() {
               });

@@ -4,13 +4,22 @@
     <div class="row" id="root">
         <div class="col-md-6">
             <div class="panel panel-default">
-
+                <div class="panel-heading">Edit you checklist</div>
+                
                 <div class="panel-body">
-                    Add an item to your checklist here.
+                    
                     <form class="form-horizontal" method="post" action="{{ url('/places/checklist/add') }}">
                         <div class="form-group">
-                            <input id="checklistItem" name="item" id="" placeholder="Enter an Item" type="text"></input>
+                            <input id="checklistItem" name="itemAdd" id="" placeholder="Enter an Item" type="text"></input>
                             <button type="submit" class="btn btn-primary">Add Item</button>
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        </div>
+                    </form>
+                    
+                    <form class="form-horizontal" method="post" action="{{ url('/places/checklist/delete') }}">
+                        <div class="form-group">
+                            <input id="checklistItem" name="itemDelete" id="" placeholder="Enter an Item" type="text"></input>
+                            <button type="submit" class="btn btn-primary">Delete Item</button>
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         </div>
                     </form>
@@ -62,6 +71,13 @@
 
 
 
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="panel-heading"><a href="{{ url('/home') }}">Home</a></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
