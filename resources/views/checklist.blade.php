@@ -7,7 +7,7 @@
 
                 <div class="panel-body">
                     Add an item to your checklist here.
-                    <form class="form-horizontal" method="post" action="{{ url('/checklists/add') }}">
+                    <form class="form-horizontal" method="post" action="{{ url('/places/checklist/add') }}">
                         <div class="form-group">
                             <input id="checklistItem" name="item" id="" placeholder="Enter an Item" type="text"></input>
                             <button type="submit" class="btn btn-primary">Add Item</button>
