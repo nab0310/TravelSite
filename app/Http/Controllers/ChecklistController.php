@@ -26,4 +26,10 @@ class ChecklistController extends Controller
         $items = DB::table('checklistItems')->where('id', DB::table('usersForTravelApp')->where('email', Auth::user()->email)->value('id') );
         return view('checklist', ['items' => $items]);
     }
+    public function check($itemName, $isChecked){
+        DB::table('checklistItems')->where('item', $itemName)->update(['isDone'=>$isChecked]);
+        $items = DB::table('checklistItems')->get()->where('id', DB::table('usersForTravelApp')->where('email', Auth::user()->email)->value('id'));
+
+        return view('checklist', ['items' => $items]);
+    }
 }

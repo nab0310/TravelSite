@@ -25,7 +25,7 @@
                         <div id="checkContent">
                             <div id="list">
                             @foreach($items as $key => $value)
-                                    <input type="checkbox" name="isDone" value="idDone" {{ $value->isDone != 'N' ? 'checked' : '' }}>
+                                    <input type="checkbox" name="isDone" id="{{ $value-> item }}" value="idDone" {{ $value->isDone != 'N' ? 'checked' : '' }}>
                                     {{ $value-> item }}
                                     <hr>
                             @endforeach
@@ -37,13 +37,15 @@
                             if($(this).is(':checked'))
                             {
                                 // Checkbox is checked.
-                                alert("You have checked this off");
+
+                                alert(this.id + " = checked");
+                                window.location = "{{ url('/places/checklist/check') }}"+"/"+this.id+"/"+1;
                             }
                             else
                             {
                                 // Checkbox is not checked.
-                                alert("You have unchecked this.");
-
+                                alert(this.id + " = unchecked");
+                                window.location = "{{ url('/places/checklist/check') }}"+"/"+this.id+"/"+0;
                             }    
 
                         });

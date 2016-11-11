@@ -23,6 +23,8 @@ Route::post('/places/checklist/load', 'ChecklistController@load');
 
 Route::post('/places/checklist/add', 'ChecklistController@add');
 
+Route::get('/places/checklist/check/{itemName}/{isChecked}', 'ChecklistController@check');
+
 Route::get('/places/restaurant','PlaceController@restaurant');
 
 Route::get('/places/store','PlaceController@store');
